@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: "mongo"
+    container_name: "mongodb"
+    restart: always
+  app:
+    image: "address-retriever"
+    depends_on:
+      - db
+    env_file:
+      - api.env
+    ports:
+      - "8080:8080"
+
+
+
