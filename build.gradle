@@ -25,9 +25,9 @@ repositories {
 	mavenCentral()
 }
 
-//ext {
-//	set('testcontainersVersion', "1.15.3")
-//}
+ext {
+	set('testcontainersVersion', "1.15.3")
+}
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
@@ -37,15 +37,15 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//	testImplementation 'org.testcontainers:junit-jupiter'
-//	testImplementation 'org.testcontainers:mongodb'
+	testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation 'org.testcontainers:mongodb'
 }
 
-//dependencyManagement {
-//	imports {
-//		mavenBom "org.testcontainers:testcontainers-bom:${testcontainersVersion}"
-//	}
-//}
+dependencyManagement {
+	imports {
+		mavenBom "org.testcontainers:testcontainers-bom:${testcontainersVersion}"
+	}
+}
 
 test {
 	useJUnitPlatform()
